@@ -1,0 +1,210 @@
+:root {
+  color-scheme: light dark;
+  --text: light-dark(#161616, #e6e6e6);
+  --muted: light-dark(#6f6f6f, #8c8c8c);
+  --line: light-dark(#e2e2e2, #2a2a2a);
+  --surface: light-dark(#f5f5f5, #181818);
+  --page: light-dark(#fdfdfd, #0e0e0e);
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+  background: var(--page);
+  color: var(--text);
+  font: 1.0625rem/1.7 Charter, "Iowan Old Style", Georgia, serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-color: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+}
+
+.brand img {
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  gap: 1.25rem;
+  color: var(--muted);
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+time {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+}
+
+.posts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.posts li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.6rem 0;
+}
+
+.posts time {
+  flex: none;
+}
+
+.posts a {
+  text-decoration: none;
+}
+
+.posts a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.875rem;
+}
+
+h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.3125rem;
+}
+
+h3 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.0625rem;
+}
+
+article > time {
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--text);
+  color: var(--muted);
+  font-style: italic;
+}
+
+hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+}
+
+:not(pre) > code {
+  padding: 0.15em 0.35em;
+  background: var(--surface);
+  border-radius: 3px;
+}
+
+pre {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  line-height: 1.55;
+}
+
+.codehilite [class^="c"] {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.codehilite [class^="k"],
+.codehilite .nc,
+.codehilite .nf {
+  font-weight: 600;
+}
+
+.codehilite [class^="s"] {
+  font-style: italic;
+}
+
+table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+th, td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+th {
+  border-bottom-color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.footnote {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 30rem) {
+  .posts li {
+    flex-direction: column;
+    gap: 0;
+  }
+}
