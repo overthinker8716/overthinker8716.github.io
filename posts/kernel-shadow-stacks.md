@@ -1,4 +1,4 @@
-title: The stack the kernel cannot write to
+title: [EN] The stack the kernel cannot write to
 date: 2026-11-12
 
 I kept getting stuck on one thing while reading about kernel CET on Windows. The threat model for the kernel assumes the attacker already has arbitrary write. So the shadow stack has to be unwritable from ring 0. But every `call` in the kernel writes to it. Both can't be true with normal paging, and it took me a while to see where the trick is.
